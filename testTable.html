@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+    <style>
+      body{
+        display: flex;
+        padding: 1rem;
+      }
+      
+      table{
+        width: 100%;
+        border: 1px solid black;
+        text-align: center;
+      }
+      
+      button{
+        background-color: black;
+        color: white;
+        border: 1px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <table>
+      <thead>
+        <tr>
+          <th>Price</th>
+          <th>Quantity</th>
+          <th>Result</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr id="row">
+          <td id="price_class">
+            <input type="number" id="price-el">
+          </td>
+          <td id="quantity_class">
+            <input type="number" id="quantity-el">
+            <button onclick="ifClick()">✅</button>
+          </td>
+          <td id="result-el"></td>
+        </tr>
+      </tbody>
+    </table>
+    <script>
+      function ifClick() {
+        let rowEl = document.getElementById('row');
+        let price = document.getElementById('price-el');
+        let quantity = document.getElementById('quantity-el');
+        let resultEl = document.getElementById('result-el');
+        result = price.value * quantity.value;
+        resultEl.textContent = result;
+        
+        document.getElementById('price_class').textContent = price.value;
+        document.getElementById('quantity_class').textContent = quantity.value;
+      };
+    </script>
+  </body>
+</html>
